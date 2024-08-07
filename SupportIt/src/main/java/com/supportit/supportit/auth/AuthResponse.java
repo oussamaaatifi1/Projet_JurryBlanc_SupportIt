@@ -1,4 +1,4 @@
-package com.supportit.supportit.auth;
+package com.banksystem.projeteventbackend.Auth;
 
 
 import com.fasterxml.jackson.annotation.JsonProperty;

@@ -1,4 +1,4 @@
-package com.supportit.supportit.config;
+package com.banksystem.projeteventbackend.config;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;

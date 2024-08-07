@@ -1,4 +1,4 @@
-package com.supportit.supportit.config;
+package com.banksystem.projeteventbackend.config;
 
 import com.banksystem.projeteventbackend.service.UserDetailsServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;

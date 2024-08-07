@@ -1,6 +1,8 @@
-package com.supportit.supportit.auth;
+package com.banksystem.projeteventbackend.Auth;
 
 
+import com.banksystem.projeteventbackend.Auth.AuthRequest;
+import com.banksystem.projeteventbackend.Auth.AuthResponse;
 import com.banksystem.projeteventbackend.config.RegisterRequest;
 import com.banksystem.projeteventbackend.service.UserDetailsServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
