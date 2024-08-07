@@ -1,23 +1,43 @@
 package com.supportit.supportit.entity;
 
-import jakarta.persistence.*;
 
-import java.util.Date;
+import com.supportit.supportit.entity.enums.EtatTicket;
+import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+import java.time.LocalDate;
+import java.util.List;
 
 @Entity
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class Ticket {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id_ticket;
+    private Long ticketId;
     private String description;
-    private String status;
-    private Date dateCreation;
-    private int id_employe;
-    private int id_technicien;
-    private int id_equipe;
+    private LocalDate dateDeCreation;
+    @Enumerated(EnumType.STRING)
+    private EtatTicket statut;
 
     @ManyToOne
     @JoinColumn(name = "technicien_id")
     private Technicien technicien;
+
+    @ManyToOne
+    @JoinColumn(name = "utilisateur_id")
+    private Utilisateur utilisateur;
+
+    @ManyToOne
+    @JoinColumn(name = "equipementId")
+    private Equipment equipment;
+
+    @ManyToOne
+    @JoinColumn(name = "panneId")
+    private Panne panne;
 
 }

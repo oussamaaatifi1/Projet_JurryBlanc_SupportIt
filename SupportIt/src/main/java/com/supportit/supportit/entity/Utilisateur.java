@@ -1,16 +1,14 @@
 package com.supportit.supportit.entity;
 
-
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
+
+import java.util.List;
 
 @Entity
-public class Utilisateur extends Personne {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id_user;
-
+public class Utilisateur extends Personne{
+    @OneToMany(mappedBy = "utilisateur")
+    @JsonIgnore
+    private List<Ticket> tickets;
 }

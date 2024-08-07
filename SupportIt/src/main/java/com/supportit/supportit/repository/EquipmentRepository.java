@@ -1,8 +1,9 @@
 package com.supportit.supportit.repository;
 
-
 import com.supportit.supportit.entity.Equipment;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
-public interface EquipementRepository extends JpaRepository<Equipment, Long> {
+@Repository
+public interface EquipmentRepository extends JpaRepository<Equipment, Long> {
 }
