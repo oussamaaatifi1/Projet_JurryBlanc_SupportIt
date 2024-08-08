@@ -19,9 +19,7 @@ public class Panne {
     private Long panneId;
     private String name;
 
-    @OneToMany(mappedBy = "panne")
-    @JsonIgnore
-    private List<HistoriquePanne> historiques;
+
 
     @OneToMany(mappedBy = "panne")
     @JsonIgnore
