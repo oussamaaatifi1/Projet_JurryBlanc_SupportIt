@@ -17,21 +17,21 @@ public class AuthenticationController {
 
     private final AuthenticationService authService;
 
-    @PostMapping("/Admin/register")
+    @PostMapping("/register/register")
     public ResponseEntity<AuthenticationResponse> register(
             @RequestBody RegisterRequest request
     ) {
         return ResponseEntity.ok(authService.register(request));
     }
 
-    @PostMapping("/registerAdmin")
+    @PostMapping("/register/registerAdmin")
     public ResponseEntity<AuthenticationResponse> registerAdmin(
             @RequestBody RegisterRequest request
     ) {
         return ResponseEntity.ok(authService.registerAdmin(request));
     }
 
-    @PostMapping("/Admin/registerTechnicien")
+    @PostMapping("/register/registerTechnicien")
     public ResponseEntity<AuthenticationResponse> registerTechnicien(
             @RequestBody RegisterRequest request
     ) {
