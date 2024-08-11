@@ -17,7 +17,9 @@ public class Panne {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long panneId;
-    private String name;
+    private String type;
+    private String description;
+    private String imgUrl;
 
 
 
