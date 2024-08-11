@@ -27,7 +27,9 @@ public class PanneServiceImpl implements PanneService {
         Panne editedPanne = new Panne();
 
         editedPanne.setPanneId(id);
-        editedPanne.setName(panne.getName());
+        editedPanne.setType(panne.getType());
+        editedPanne.setDescription(panne.getDescription());
+        editedPanne.setImgUrl(panne.getImgUrl());
 
         return panneRepository.save(editedPanne);
     }
