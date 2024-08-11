@@ -26,9 +26,7 @@ public class Equipment {
     private EquipmentStatut statut;
 
 
-    @OneToMany(mappedBy = "equipment")
-    @JsonIgnore
-    private List<HistoriquePanne> historiques;
+
 
     @OneToMany(mappedBy = "equipment")
     @JsonIgnore
