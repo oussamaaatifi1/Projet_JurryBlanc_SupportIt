@@ -48,12 +48,12 @@ En tant que développeur full stack Java/Angular chez ITSolutions, vous êtes ch
 
 ### Diagramme de Classe
 
-![Diagramme de Classe]<img width="512" alt="diagramme de class" src="https://github.com/user-attachments/assets/cc243b9d-a11e-41a5-bdcb-c0ef38163db4">
+![Diagramme de Classe]<img width="512"  src="https://github.com/user-attachments/assets/cc243b9d-a11e-41a5-bdcb-c0ef38163db4">
 
 
 ### Diagramme de Séquence
 
-![Diagramme de Séquence]<img width="224" alt="diagramme de séquence adùmin" src="https://github.com/user-attachments/assets/c4dc8858-0606-45d0-be0d-5f016551cc65">
+![Diagramme de Séquence]<img width="224"  src="https://github.com/user-attachments/assets/c4dc8858-0606-45d0-be0d-5f016551cc65">
 
 
 
