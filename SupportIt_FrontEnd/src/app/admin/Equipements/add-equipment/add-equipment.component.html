@@ -1,0 +1,53 @@
+<body class="bg-gray-800 min-h-screen">
+  <div class="container mx-auto p-8">
+    <h2 class="text-2xl font-bold mb-6 text-white">Add Equipment</h2>
+    <form (ngSubmit)="onSubmit()" class="bg-gray-900 p-6 rounded-lg shadow-md space-y-4">
+      
+      <!-- Name Field -->
+      <div class="mb-4">
+        <label for="name" class="block text-sm font-medium text-gray-400">Name</label>
+        <input id="name" type="text" [(ngModel)]="equipement.name" name="name"
+          #name="ngModel" class="mt-1 block w-full border-gray-600 bg-gray-800 rounded-md shadow-sm text-gray-300" />
+        <div *ngIf="name.invalid && (name.dirty || name.touched)" class="text-red-600 text-sm mt-1">
+          Name is required
+        </div>
+      </div>
+
+      <!-- Description Field -->
+      <div class="mb-4">
+        <label for="description" class="block text-sm font-medium text-gray-400">Description</label>
+        <textarea id="description" rows="3" [(ngModel)]="equipement.description" name="description"
+          #description="ngModel" class="mt-1 block w-full border-gray-600 bg-gray-800 rounded-md shadow-sm text-gray-300" placeholder="Enter equipment description"></textarea>
+        <div *ngIf="description.invalid && (description.dirty || description.touched)" class="text-red-600 text-sm mt-1">
+          Description is required
+        </div>
+      </div>
+
+      <!-- Image URL Field -->
+      <div class="mb-4">
+        <label for="imgUrl" class="block text-sm font-medium text-gray-400">Image URL</label>
+        <input id="imgUrl" type="text" [(ngModel)]="equipement.imgUrl" name="imgUrl"
+          #imgUrl="ngModel" class="mt-1 block w-full border-gray-600 bg-gray-800 rounded-md shadow-sm text-gray-300" placeholder="Enter image URL" />
+      </div>
+
+      <!-- Status Field -->
+      <div class="mb-4">
+        <label for="statut" class="block text-sm font-medium text-gray-400">Status</label>
+        <select id="statut" [(ngModel)]="equipement.statut" name="statut"
+          (change)="onStatusChange($event)" class="mt-1 block w-full border-gray-600 bg-gray-800 rounded-md shadow-sm text-gray-300">
+          <option [value]="equipmentStatuses.AREPARE">AREPARE</option>
+          <option [value]="equipmentStatuses.REPARE">REPARE</option>
+          <option [value]="equipmentStatuses.ENCORE">ENCORE</option>
+        </select>
+      </div>
+
+      <!-- Submit Button -->
+      <div class="flex justify-end">
+        <button type="submit"
+          class="bg-blue-500 text-white px-4 py-2 rounded-md shadow-sm hover:bg-blue-600">
+          Add Equipment
+        </button>
+      </div>
+    </form>
+  </div>
+</body>
