@@ -12,4 +12,5 @@ public interface TicketService {
     List<Ticket> findByUtilisateur(Long id);
     Ticket assignerTicket(Long id, Ticket ticket);
     Ticket changerStatut(Long id, Ticket ticket);
+    public List<Ticket> findByEquipment(Long id);
 }
