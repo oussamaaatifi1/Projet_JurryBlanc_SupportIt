@@ -10,4 +10,7 @@ public interface EquipmentService {
     Equipment editEquipment(Long id, Equipment equipment);
     List<Equipment> getAllEquipements();
     void deleteEquipment(Long id);
+    public Equipment equipmentById(Long id);
+    public Equipment changeEquipmentStatut(Long id, Equipment equipment);
+
 }
