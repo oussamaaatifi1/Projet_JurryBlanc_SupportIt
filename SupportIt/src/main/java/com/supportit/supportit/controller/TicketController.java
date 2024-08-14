@@ -9,6 +9,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/v1/auth/tickets")
+@CrossOrigin(origins = "http://localhost:4200/")
 public class TicketController {
 
     @Autowired
@@ -23,6 +24,12 @@ public class TicketController {
     public List<Ticket> getAllTickets(){
         return ticketService.getAllTickets();
     }
+
+    @GetMapping("/equipmentTickets/{id}")
+    public List<Ticket> ticketsByEquipment(@PathVariable Long id){
+        return ticketService.findByEquipment(id);
+    }
+
 
     @GetMapping("/tickets/{id}")
     public List<Ticket> ticketsByTechnicien(@PathVariable Long id){
@@ -43,5 +50,4 @@ public class TicketController {
     public Ticket changetStatut(@PathVariable Long id, @RequestBody Ticket ticket){
         return ticketService.changerStatut(id, ticket);
     }
-
 }
