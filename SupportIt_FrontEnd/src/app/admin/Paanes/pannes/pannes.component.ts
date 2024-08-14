@@ -30,4 +30,15 @@ export class PannesComponent implements OnInit {
   editPannes(panneId: number): void {
     this.router.navigate(['/pannes/edit',panneId ]);
   }
+
+  deletePanne(id: number): void {
+    this.pannesSerivce.deletePanne(id).subscribe(
+      () => {
+        this.getPanneList();
+      },
+      error => {
+        console.error('Error deleting equipment:', error);
+      }
+    );
+  }
 }
