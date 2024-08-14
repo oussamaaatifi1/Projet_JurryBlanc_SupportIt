@@ -9,6 +9,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/v1/auth/Admin/equipements")
+@CrossOrigin(origins = "http://localhost:4200/")
 public class EquipmentController {
     @Autowired
     EquipmentService equipmentService;
@@ -29,5 +30,13 @@ public class EquipmentController {
     @PutMapping("/edit/{id}")
     public Equipment editEquipment(@PathVariable Long id,@RequestBody Equipment equipment){
         return equipmentService.editEquipment(id, equipment);
+    }
+    @PutMapping("/statut/{id}")
+    public Equipment changeStatut(@PathVariable Long id, @RequestBody Equipment equipment){
+        return equipmentService.changeEquipmentStatut(id, equipment);
+    }
+    @GetMapping("/{id}")
+    public Equipment getEquipment(@PathVariable Long id){
+        return equipmentService.equipmentById(id);
     }
 }
