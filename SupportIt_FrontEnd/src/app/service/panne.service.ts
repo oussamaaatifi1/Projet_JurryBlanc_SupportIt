@@ -17,4 +17,12 @@ export class PanneService {
   createPannes(pannes : Pannes) : Observable<Object> {
     return this.httpClient.post(`${this.BaseURL}/add`,pannes);
   }
+
+  updatePanne(panneId: number, pannes: Pannes): Observable<Pannes> {
+    return this.httpClient.put<Pannes>(`${this.BaseURL}/edit/${panneId}`,pannes);
+  }
+
+  deletePanne(id: number): Observable<Object> {
+    return this.httpClient.delete(`${this.BaseURL}/delete/${id}`);
+  }
 }
