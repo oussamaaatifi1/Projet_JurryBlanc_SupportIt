@@ -1,9 +1,11 @@
 package com.supportit.supportit.service.impl;
 
+import com.supportit.supportit.entity.Equipment;
 import com.supportit.supportit.entity.Technicien;
 import com.supportit.supportit.entity.Ticket;
 import com.supportit.supportit.entity.Utilisateur;
 import com.supportit.supportit.entity.enums.EtatTicket;
+import com.supportit.supportit.repository.EquipementRepository;
 import com.supportit.supportit.repository.PersonneRepository;
 import com.supportit.supportit.repository.TechnicienRepository;
 import com.supportit.supportit.repository.TicketRepository;
@@ -23,6 +25,8 @@ public class TicketServiceImpl implements TicketService {
     TechnicienRepository technicienRepository;
     @Autowired
     private PersonneRepository personneRepository;
+    @Autowired
+    private EquipementRepository equipmentRepository;
 
     @Override
     public Ticket addTicket(Ticket ticket) {
@@ -53,6 +57,15 @@ public class TicketServiceImpl implements TicketService {
                 .orElseThrow(() -> new RuntimeException("Utilisateur not found"));
         List<Ticket> tickets = ticketRepository.findAllByUtilisateur(utilisateur);
         return tickets;
+    }
+
+    @Override
+    public List<Ticket> findByEquipment(Long id) {
+        Equipment equipment = equipmentRepository.findById(id).orElseThrow(
+                () -> new RuntimeException("Equipment not found")
+        );
+        List<Ticket> equipments = ticketRepository.findAllByEquipment(equipment);
+        return equipments;
     }
 
 
