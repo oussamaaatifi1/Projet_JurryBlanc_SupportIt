@@ -16,7 +16,11 @@ import { AddPannesComponent } from './admin/Paanes/add-pannes/add-pannes.compone
 // import { technicienGuard } from './Guard/technicien-guard.guard';
 import { Role } from './Model/enum/Role';
 import { AdminGuard } from './Guard/admin-guard.guard';
-import { UpdateEquipementComponent } from './Equipements/update-equipement/update-equipement.component';
+// import { UpdateEquipementComponent } from './Equipements/update-equipement/update-equipement.component';
+import { ListUtilisateursComponent } from './admin/Utilisateurs/list-utilisateurs/list-utilisateurs.component';
+import { HomeComponent } from './home/home/home.component';
+import { EditPannesComponent } from './admin/Paanes/edit-pannes/edit-pannes.component';
+import { TechnicienComponent } from './admin/technicien/technicien.component';
 
 
 
@@ -30,14 +34,17 @@ const routes: Routes = [
 
   { path: '', redirectTo: '/login', pathMatch: 'full' },
   // { path: '**', redirectTo: '/login' },
-  { path: 'register', component: SignupComponent, canActivate: [AdminGuard] },
-  { path: 'register/tech', component: SignupComponent, canActivate: [AdminGuard] },
-  {path : 'equipements' , component : EquipementComponent,canActivate: [AdminGuard]},
-  { path: 'equipements/add', component: AddEquipmentComponent,canActivate: [AdminGuard] },
-  { path: 'equipements/edit/:id', component: EditEquipmentComponent,canActivate: [AdminGuard] },
-  {path : 'pannes' , component : PannesComponent,canActivate: [AdminGuard]},
-  { path: 'pannes/add', component: AddPannesComponent ,canActivate: [AdminGuard] },
-  
+  { path: 'register', component: SignupComponent },
+  { path: 'register/tech', component: SignupComponent, canActivate: [AuthGuard] },
+  {path : 'equipements' , component : EquipementComponent,canActivate: [AuthGuard]},
+  {path : 'Utilisateurs',component : ListUtilisateursComponent, canActivate:[AuthGuard]},
+  {path : 'techniciens' , component : TechnicienComponent,canActivate : [AuthGuard]},
+  { path: 'equipements/add', component: AddEquipmentComponent,canActivate: [AuthGuard] },
+  {path : 'pannes/edit/:id',component : EditPannesComponent,canActivate :[AuthGuard]},
+  { path: 'equipements/edit/:id', component: EditEquipmentComponent,canActivate: [AuthGuard] },
+  {path : 'pannes' , component : PannesComponent,canActivate: [AuthGuard]},
+  { path: 'pannes/add', component: AddPannesComponent ,canActivate: [AuthGuard] },
+  {path : 'home' ,component : HomeComponent},
 ];
 
 @NgModule({
