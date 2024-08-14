@@ -1,6 +1,7 @@
 package com.supportit.supportit.repository;
 
 
+import com.supportit.supportit.entity.Equipment;
 import com.supportit.supportit.entity.Technicien;
 import com.supportit.supportit.entity.Ticket;
 import com.supportit.supportit.entity.Utilisateur;
@@ -11,4 +12,5 @@ import java.util.List;
 public interface TicketRepository extends JpaRepository<Ticket, Long> {
     List<Ticket> findAllByUtilisateur(Utilisateur utilisateur);
     List<Ticket> findAllByTechnicien(Technicien technicien);
+    List<Ticket> findAllByEquipment(Equipment equipment);
 }
