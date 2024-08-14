@@ -54,4 +54,18 @@ public Equipment editEquipment(Long id, Equipment equipment) {
     public void deleteEquipment(Long id) {
         equipmentRepository.deleteById(id);
     }
+    @Override
+    public Equipment changeEquipmentStatut(Long id, Equipment equipment) {
+        Equipment equipment1 = equipmentRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Equipment Not Found"));
+        equipment1.setStatut(equipment.getStatut());
+        return equipmentRepository.save(equipment1);
+    }
+
+    @Override
+    public Equipment equipmentById(Long id) {
+        return equipmentRepository.findById(id).orElseThrow(
+                () -> new RuntimeException("Equipment Not Found")
+        );
+    }
 }
