@@ -21,11 +21,13 @@ import { ListUtilisateursComponent } from './admin/Utilisateurs/list-utilisateur
 import { HomeComponent } from './home/home/home.component';
 import { EditPannesComponent } from './admin/Paanes/edit-pannes/edit-pannes.component';
 import { TechnicienComponent } from './admin/technicien/technicien.component';
+import { TableTicketsComponent } from './admin/table-tickets/table-tickets.component';
+import { ListticketsComponent } from './admin/user/listtickets/listtickets.component';
 
 
 
 const routes: Routes = [
-  { path: 'admin/dashboard', component: AdminComponentComponent, canActivate: [AuthGuard], data: { roles: ['ADMIN'] } },
+  { path: 'admin/dashboard', component: AdminComponentComponent, canActivate: [AuthGuard,AdminGuard], data: { roles: ['ADMIN'] } },
   { path: 'technician/dashboard', component: TechnicienDashboardComponent, canActivate: [AuthGuard], data: { roles: ['TECHNICIEN'] } },
   { path: 'user/dashboard', component: UserDashboardComponentComponent, canActivate: [AuthGuard], data: { roles: ['USER'] } },
 
@@ -45,6 +47,8 @@ const routes: Routes = [
   {path : 'pannes' , component : PannesComponent,canActivate: [AuthGuard]},
   { path: 'pannes/add', component: AddPannesComponent ,canActivate: [AuthGuard] },
   {path : 'home' ,component : HomeComponent},
+  {path : 'tickets',component : TableTicketsComponent},
+  {path : 'listtickets' , component : ListticketsComponent},
 ];
 
 @NgModule({
