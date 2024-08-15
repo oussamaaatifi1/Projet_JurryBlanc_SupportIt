@@ -22,6 +22,10 @@ import { ListUtilisateursComponent } from './admin/Utilisateurs/list-utilisateur
 import { HomeComponent } from './home/home/home.component';
 import { EditPannesComponent } from './admin/Paanes/edit-pannes/edit-pannes.component';
 import { TechnicienComponent } from './admin/technicien/technicien.component';
+import { TableTicketsComponent } from './admin/table-tickets/table-tickets.component';
+import { SidbarComponent } from './sidbar/sidbar/sidbar.component';
+import { NavbarComponent } from './navbar/navbar/navbar.component';
+import { ListticketsComponent } from './admin/user/listtickets/listtickets.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +44,11 @@ import { TechnicienComponent } from './admin/technicien/technicien.component';
     ListUtilisateursComponent,
     HomeComponent,
     EditPannesComponent,
-    TechnicienComponent
+    TechnicienComponent,
+    TableTicketsComponent,
+    SidbarComponent,
+    NavbarComponent,
+    ListticketsComponent
   ],
   imports: [
     BrowserModule,
